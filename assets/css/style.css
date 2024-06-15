@@ -358,11 +358,11 @@
   cursor: pointer;
 }
 .restaurant__details__starter__card:hover > .restaurant__details__starter__card--check {
-  animation: check 800ms 150ms both;
+  animation: check 800ms 150ms backwards;
 }
 .restaurant__details__starter__card:hover > .restaurant__details__starter__card__description .price {
   transform: translateX(0);
-  transition: all 800ms ease-in-out;
+  transition: 800ms ease-in-out;
 }
 .restaurant__details__order {
   margin-top: 30px;
@@ -370,14 +370,40 @@
   align-items: center;
   justify-content: center;
 }
+@media screen and (min-width: 800px) {
+  .restaurant__details {
+    width: 80%;
+    margin-right: auto;
+    margin-left: auto;
+    padding-right: 100px;
+    padding-left: 100px;
+  }
+  .restaurant__details__title {
+    justify-content: center;
+    padding-right: 0;
+  }
+  .restaurant__details__title .likes {
+    margin-left: 30px;
+  }
+}
+@media screen and (min-width: 1250px) {
+  .restaurant__details {
+    padding-right: 170px;
+    padding-left: 170px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .restaurant__details__starter {
+    width: 90%;
+  }
+}
 
 @keyframes check {
   0% {
-    visibility: hidden;
     transform: translateX(80px);
   }
   100% {
-    visibility: visible;
     transform: translateX(0);
   }
 }
@@ -506,6 +532,11 @@ h1, h2, h3, h4, h5, h6 {
   width: 137px;
   margin-bottom: 14px;
 }
+.container__footer div {
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 16px;
+}
 .container__footer a {
   color: #fff;
   font-size: 16px;
@@ -528,14 +559,17 @@ h1, h2, h3, h4, h5, h6 {
 }
 @media screen and (min-width: 1200px) {
   .container__footer {
-    padding: 25px 50px;
+    padding: 80px 50px 25px 25px;
     align-items: center;
     justify-content: flex-start;
   }
   .container__footer img {
     margin-bottom: 0;
     width: 129px;
-    margin-left: 40px;
+    margin-left: 50px;
+  }
+  .container__footer div {
+    flex-direction: row-reverse;
   }
   .container__footer ul {
     flex-direction: row;

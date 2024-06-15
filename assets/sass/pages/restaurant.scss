@@ -62,7 +62,6 @@
             margin-bottom: 0;
             margin-top: 5px;
 
-
             .price {
               display: inline-block;
               font-weight: 700;
@@ -74,7 +73,6 @@
 
         &--check {
           width: 70px;
-          //visibility: hidden;
           display: flex;
           background-color: $light-green;
           justify-content: center;
@@ -82,7 +80,6 @@
           border-top-right-radius: 15px;
           border-bottom-right-radius: 15px;
           transform: translateX(80px);
-
 
           i {
             font-size: 20px;
@@ -95,12 +92,12 @@
         &:hover {
           cursor: pointer;
           & > .restaurant__details__starter__card--check {
-            animation: check 800ms 150ms both;
+            animation: check 800ms 150ms backwards;
           }
 
           & > .restaurant__details__starter__card__description .price {
             transform: translateX(0);
-            transition: all 800ms ease-in-out;
+            transition: 800ms ease-in-out;
           }
         }
       }
@@ -112,17 +109,44 @@
       align-items: center;
       justify-content: center;
     }
+
+    @media screen and (min-width: 800px) {
+      width: 80%;
+      margin-right: auto;
+      margin-left: auto;
+      padding-right: 100px;
+      padding-left: 100px;
+
+      &__title {
+        justify-content: center;
+        padding-right: 0;
+
+        .likes {
+          margin-left: 30px;
+        }
+      }
+    }
+
+    @media screen and (min-width: 1250px) {
+      padding-right: 170px;
+      padding-left: 170px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      &__starter {
+        width: 90%;
+      }
+    }
   }
 }
 
 @keyframes check {
   0% {
-    visibility: hidden;
     transform: translateX(80px);
   }
 
   100% {
-    visibility: visible;
     transform: translateX(0);
   }
 }
