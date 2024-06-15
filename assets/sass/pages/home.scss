@@ -11,33 +11,28 @@
   animation: loading 3s forwards;
   background: $white;
 
-  &__load {
-    display: flex;
-    justify-content: space-evenly;
-
-    &__ball {
-      display: block;
-      border-radius: 100%;
-      height: 35px;
-      width: 35px;
-      margin: 0;
-      background: linear-gradient(193.33deg, $purple -11.44%, $pink 123.93%);
-      animation: balls 1s infinite backwards ease-in-out alternate;
-      &--1 {
-        animation-delay: 1124ms;
-      }
-      &--2 {
-        animation-delay: 400ms;
-      }
-      &--3 {
-        animation-delay: 994ms;
-      }
-      &--4 {
-        animation-delay: 392ms;
-      }
-      &--5 {
-        animation-delay: 1130ms;
-      }
+  &__ball {
+    display: block;
+    border-radius: 100%;
+    height: 35px;
+    width: 35px;
+    margin: 3px;
+    background: linear-gradient(193.33deg, $purple -11.44%, $pink 123.93%);
+    animation: balls 1s infinite backwards ease-in-out alternate;
+    &--1 {
+      animation-delay: 1124ms;
+    }
+    &--2 {
+      animation-delay: 400ms;
+    }
+    &--3 {
+      animation-delay: 994ms;
+    }
+    &--4 {
+      animation-delay: 392ms;
+    }
+    &--5 {
+      animation-delay: 1130ms;
     }
   }
 }

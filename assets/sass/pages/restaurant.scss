@@ -92,7 +92,7 @@
         &:hover {
           cursor: pointer;
           & > .restaurant__details__starter__card--check {
-            animation: check 800ms 150ms backwards;
+            animation: check 800ms 150ms both;
           }
 
           & > .restaurant__details__starter__card__description .price {

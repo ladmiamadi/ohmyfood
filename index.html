@@ -2,9 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport"
-          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <meta name="viewport" content="width=device-width">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.1/css/all.min.css"
           integrity="sha512-MV7K8+y+gLIBoVD59lQIYicR65iaqukzvf/nwasF0nqhPay5w/9lJmVM2hMDcnK1OnMGCdVK+iQrJ7lzPJQd1w=="
           crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -12,15 +10,13 @@
     <title>OHMYFOOD</title>
 </head>
 <body>
-    <section class="loader">
-        <div class="loader__load">
-            <figure class="loader__load__ball loader__load__ball--1"></figure>
-            <figure class="loader__load__ball loader__load__ball--2"></figure>
-            <figure class="loader__load__ball loader__load__ball--3"></figure>
-            <figure class="loader__load__ball loader__load__ball--4"></figure>
-            <figure class="loader__load__ball loader__load__ball--5"></figure>
-        </div>
-    </section>
+    <div class="loader">
+        <figure class="loader__ball loader__ball--1"></figure>
+        <figure class="loader__ball loader__ball--2"></figure>
+        <figure class="loader__ball loader__ball--3"></figure>
+        <figure class="loader__ball loader__ball--4"></figure>
+        <figure class="loader__ball loader__ball--5"></figure>
+    </div>
     <div class="container">
         <header class="container__logo">
             <h1 aria-label="ohmyfood">
@@ -30,20 +26,18 @@
             </h1>
         </header>
         <main>
-            <section class="container__location">
+            <div class="container__location">
                 <button>
                     <span><i class="fa-solid fa-location-dot"></i></span>
                     Paris, Belleville
                 </button>
-            </section>
+            </div>
             <section class="container__reservation">
                 <h2 class="container__reservation__title">Réservez le menu qui vous convient</h2>
                 <p class="container__reservation__text">
                     Découvrez des restaurants d’exception, sélectionnés par nos soins.
                 </p>
-                <a href="#restaurants">
-                    <button class="gradient-button">Explorer nos restaurants</button>
-                </a>
+                <a href="#restaurants" class="gradient-button">Explorer nos restaurants</a>
             </section>
             <section class="container__functioning">
                 <h2 class="title-section">Fonctionnement</h2>
@@ -75,7 +69,7 @@
                     <a href="./pages/palette.html">
                         <article class="card">
                             <img src="assets/images/restaurants/palette-du-gout.jpg" alt="La palette du gout"/>
-                            <button class="card--new">Nouveau</button>
+                            <div class="card--new">Nouveau</div>
                             <div class="description">
                                 <div>
                                     <h3>La palette du goût</h3>
@@ -88,10 +82,10 @@
                             </div>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="./pages/note.html">
                         <article class="card">
                             <img src="assets/images/restaurants/la-note-enchantee.jpg" alt="La note enchantée"/>
-                            <button class="card--new">Nouveau</button>
+                            <div class="card--new">Nouveau</div>
                             <div class="description">
                                 <div>
                                     <h3>La note enchantée</h3>
@@ -104,7 +98,7 @@
                             </div>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="./pages/francaise.html">
                         <article class="card">
                             <img src="assets/images/restaurants/alafrancaise.jpg" alt="Restaurant à la française"/>
                             <div class="description">
@@ -119,7 +113,7 @@
                             </div>
                         </article>
                     </a>
-                    <a href="#">
+                    <a href="./pages/delice.html">
                         <article class="card">
                             <img src="assets/images/restaurants/delice-des-sens.jpg" alt="Restaurant le délice des sens"/>
                             <div class="description">
@@ -138,7 +132,9 @@
             </section>
         </main>
         <footer class="container__footer">
-            <img src="assets/images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood"/>
+            <a href="index.html">
+                <img src="./assets/images/logo/ohmyfood@2x.svg" alt="Logo ohmyfood"/>
+            </a>
             <div>
                 <ul>
                     <li>
