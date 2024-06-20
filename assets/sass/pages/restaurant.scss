@@ -36,6 +36,13 @@
 
     &__starter {
       margin-top: 30px;
+      opacity: 0;
+      animation: menu 2s both;
+      @for $i from 1 through 3 {
+        &--#{$i} {
+          animation-delay: (2s /3) * $i;
+        }
+      }
 
       &__card {
         margin-top: 20px;
@@ -67,6 +74,7 @@
               font-weight: 700;
               margin-left: auto;
               transform: translateX(70px);
+              transition: all 1s ease-in-out;
             }
           }
         }
@@ -80,6 +88,7 @@
           border-top-right-radius: 15px;
           border-bottom-right-radius: 15px;
           transform: translateX(80px);
+          transition: all 1s ease-in-out;
 
           i {
             font-size: 20px;
@@ -92,12 +101,13 @@
         &:hover {
           cursor: pointer;
           & > .restaurant__details__starter__card--check {
-            animation: check 800ms 150ms both;
+            transform: translateX(0px);
+            transition: all 800ms 150ms ease-in-out;
           }
 
           & > .restaurant__details__starter__card__description .price {
             transform: translateX(0);
-            transition: 800ms ease-in-out;
+            transition: 800ms 150ms ease-in-out;
           }
         }
       }
@@ -141,12 +151,18 @@
   }
 }
 
-@keyframes check {
+@keyframes menu {
   0% {
-    transform: translateX(80px);
+    //transform: scaleX(0);
+    transform: translate3d(
+                    0,
+                    40px,
+                    0
+    );
   }
-
   100% {
-    transform: translateX(0);
+    //transform: scaleX(1);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }

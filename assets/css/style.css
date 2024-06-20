@@ -12,13 +12,15 @@
   background: #fff;
 }
 .loader__ball {
-  display: block;
-  border-radius: 100%;
-  height: 35px;
-  width: 35px;
-  margin: 3px;
-  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  margin: 10px;
+  background-color: #fff;
   animation: balls 1s infinite backwards ease-in-out alternate;
+}
+.loader__ball i {
+  font-size: 45px;
+  background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 .loader__ball--1 {
   animation-delay: 1124ms;
@@ -303,6 +305,17 @@
 }
 .restaurant__details__starter {
   margin-top: 30px;
+  opacity: 0;
+  animation: menu 2s both;
+}
+.restaurant__details__starter--1 {
+  animation-delay: 0.6666666667s;
+}
+.restaurant__details__starter--2 {
+  animation-delay: 1.3333333333s;
+}
+.restaurant__details__starter--3 {
+  animation-delay: 2s;
 }
 .restaurant__details__starter__card {
   margin-top: 20px;
@@ -333,6 +346,7 @@
   font-weight: 700;
   margin-left: auto;
   transform: translateX(70px);
+  transition: all 1s ease-in-out;
 }
 .restaurant__details__starter__card--check {
   width: 70px;
@@ -343,6 +357,7 @@
   border-top-right-radius: 15px;
   border-bottom-right-radius: 15px;
   transform: translateX(80px);
+  transition: all 1s ease-in-out;
 }
 .restaurant__details__starter__card--check i {
   font-size: 20px;
@@ -354,11 +369,12 @@
   cursor: pointer;
 }
 .restaurant__details__starter__card:hover > .restaurant__details__starter__card--check {
-  animation: check 800ms 150ms both;
+  transform: translateX(0px);
+  transition: all 800ms 150ms ease-in-out;
 }
 .restaurant__details__starter__card:hover > .restaurant__details__starter__card__description .price {
   transform: translateX(0);
-  transition: 800ms ease-in-out;
+  transition: 800ms 150ms ease-in-out;
 }
 .restaurant__details__order {
   margin-top: 30px;
@@ -395,12 +411,13 @@
   }
 }
 
-@keyframes check {
+@keyframes menu {
   0% {
-    transform: translateX(80px);
+    transform: translate3d(0, 40px, 0);
   }
   100% {
-    transform: translateX(0);
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 * {
@@ -477,23 +494,30 @@ h1, h2, h3, h4, h5, h6 {
 .container .like {
   font-size: 22px;
   position: absolute;
+  opacity: 1;
+  transition: opacity 800ms 150ms ease-in-out;
 }
 .container .like--active {
   position: absolute;
-  opacity: 0;
+  cursor: pointer;
   z-index: 9999;
   font-size: 22px;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
   background-clip: text;
   -webkit-text-fill-color: transparent;
+  opacity: 0;
+  transform-origin: top;
+  transition: all 700ms 153ms ease-in-out;
 }
 .container .like--active:hover {
   transform-origin: bottom;
-  cursor: pointer;
-  animation: progress-like 800ms 153ms forwards;
+  opacity: 1;
+  transition: all 700ms 153ms ease-in-out;
+  animation: shake 400ms cubic-bezier(0.4, 0.1, 0.6, 0.9) 2;
 }
 .container .like--active:hover + .like {
   opacity: 0;
+  transition: all 700ms 150ms ease-in-out;
 }
 .container .decorated-title {
   display: inline-block;
@@ -574,14 +598,12 @@ h1, h2, h3, h4, h5, h6 {
   }
 }
 
-@keyframes progress-like {
-  0% {
-    opacity: 0;
-    transform: scale(0);
+@keyframes shake {
+  25% {
+    transform: translateY(4%);
   }
-  100% {
-    opacity: 1;
-    transform: scale(1);
+  75% {
+    transform: translateY(-4%);
   }
 }
 
