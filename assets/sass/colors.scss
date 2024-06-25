@@ -8,3 +8,13 @@ $pink: #FF79DA;
 $white: #fff;
 $green: #008766;
 $light-green: #99E2D0;
+
+@mixin gradient-backgroud {
+  background: linear-gradient(193.33deg, $purple -11.44%, $pink 123.93%);
+}
+
+@mixin gradient-heart {
+  @include gradient-backgroud;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+}

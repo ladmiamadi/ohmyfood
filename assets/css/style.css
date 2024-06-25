@@ -1,5 +1,39 @@
 @import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,400;0,500;0,700;1,300;1,400;1,500;1,700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Shrikhand&display=swap");
+@keyframes shake {
+  25% {
+    transform: translateY(4%);
+  }
+  75% {
+    transform: translateY(-4%);
+  }
+}
+@keyframes balls {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes loading {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
+@keyframes menu {
+  0% {
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
+  }
+}
 .loader {
   position: fixed;
   display: flex;
@@ -69,17 +103,20 @@
   gap: 15px;
 }
 .container__reservation__title {
-  width: 275px;
+  max-width: 275px;
   font-size: 24px;
   line-height: 28px;
   text-align: center;
+  padding: 0 15px;
+  margin-top: 10px;
 }
 .container__reservation__text {
-  width: 315px;
+  max-width: 315px;
   text-align: center;
   color: #353535;
   font-size: 18px;
   line-height: 22px;
+  padding: 0 15px;
 }
 @media screen and (min-width: 800px) {
   .container__reservation {
@@ -87,10 +124,10 @@
     padding-left: 120px;
   }
   .container__reservation__title {
-    width: 100%;
+    max-width: 100%;
   }
   .container__reservation__text {
-    width: 100%;
+    max-width: 100%;
   }
 }
 .container__functioning {
@@ -195,6 +232,7 @@
   background-color: #fff;
 }
 .container__restaurants__cards .card--new {
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1490196078);
   position: absolute;
   top: 15px;
   right: 20px;
@@ -202,7 +240,6 @@
   color: #008766;
   background-color: #99E2D0;
   padding: 10px 20px;
-  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.1490196078);
   border-radius: 2px;
   border: none;
 }
@@ -256,6 +293,14 @@
   }
 }
 
+@keyframes shake {
+  25% {
+    transform: translateY(4%);
+  }
+  75% {
+    transform: translateY(-4%);
+  }
+}
 @keyframes balls {
   0% {
     transform: translateY(50px);
@@ -271,6 +316,15 @@
   100% {
     opacity: 0;
     visibility: hidden;
+  }
+}
+@keyframes menu {
+  0% {
+    transform: translate3d(0, 40px, 0);
+  }
+  100% {
+    transform: translate3d(0, 0, 0);
+    opacity: 1;
   }
 }
 .restaurant__image {
@@ -329,24 +383,37 @@
 .restaurant__details__starter__card__description {
   padding: 15px;
   flex: auto;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaurant__details__starter__card__description h4 {
   font-size: 18px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
 .restaurant__details__starter__card__description p {
-  display: flex;
-  justify-content: space-between;
   font-size: 16px;
   font-weight: 300;
   margin-bottom: 0;
   margin-top: 5px;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
 }
-.restaurant__details__starter__card__description p .price {
-  display: inline-block;
+.restaurant__details__starter__card__price {
   font-weight: 700;
   margin-left: auto;
-  transform: translateX(70px);
+  margin-right: 10px;
+  transform: translateX(50px);
   transition: all 1s ease-in-out;
+  display: flex;
+  justify-content: flex-end;
+  align-items: flex-end;
+}
+.restaurant__details__starter__card__price p {
+  white-space: nowrap;
 }
 .restaurant__details__starter__card--check {
   width: 70px;
@@ -372,8 +439,8 @@
   transform: translateX(0px);
   transition: all 800ms 150ms ease-in-out;
 }
-.restaurant__details__starter__card:hover > .restaurant__details__starter__card__description .price {
-  transform: translateX(0);
+.restaurant__details__starter__card:hover > .restaurant__details__starter__card__price {
+  transform: translateX(0px);
   transition: 800ms 150ms ease-in-out;
 }
 .restaurant__details__order {
@@ -411,6 +478,31 @@
   }
 }
 
+@keyframes shake {
+  25% {
+    transform: translateY(4%);
+  }
+  75% {
+    transform: translateY(-4%);
+  }
+}
+@keyframes balls {
+  0% {
+    transform: translateY(50px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
+@keyframes loading {
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    visibility: hidden;
+  }
+}
 @keyframes menu {
   0% {
     transform: translate3d(0, 40px, 0);
@@ -442,8 +534,8 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .gradient-button {
-  padding: 15px 20px;
   background: linear-gradient(193.33deg, #9356DC -11.44%, #FF79DA 123.93%);
+  padding: 15px 20px;
   box-shadow: 0 4px 10px 0 rgba(0, 0, 0, 0.2509803922);
   border: none;
   border-radius: 25px;
@@ -595,15 +687,6 @@ h1, h2, h3, h4, h5, h6 {
   .container__footer ul {
     flex-direction: row;
     margin-left: 30px;
-  }
-}
-
-@keyframes shake {
-  25% {
-    transform: translateY(4%);
-  }
-  75% {
-    transform: translateY(-4%);
   }
 }
 
