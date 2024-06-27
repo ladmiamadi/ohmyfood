@@ -85,7 +85,7 @@
           font-weight: 700;
           margin-left: auto;
           margin-right: 10px;
-          transform: translateX(50px);
+          //transform: translateX(50px);
           transition: all 1s ease-in-out;
           display: flex;
           justify-content: flex-end;
@@ -97,14 +97,14 @@
         }
 
         &--check {
-          width: 70px;
+          width: 0;
           display: flex;
           background-color: $light-green;
           justify-content: center;
           align-items: center;
           border-top-right-radius: 15px;
           border-bottom-right-radius: 15px;
-          transform: translateX(80px);
+          //transform: translateX(80px);
           transition: all 1s ease-in-out;
 
           i {
@@ -118,7 +118,8 @@
         &:hover {
           cursor: pointer;
           & > .restaurant__details__starter__card--check {
-            transform: translateX(0px);
+            width: 20%;
+            //transform: translateX(0px);
             transition: all 800ms 150ms ease-in-out;
           }
 
