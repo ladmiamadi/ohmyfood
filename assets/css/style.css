@@ -377,7 +377,7 @@
   box-shadow: 0 4.01px 15.04px rgba(0, 0, 0, 0.1019607843);
   border-radius: 16px;
   display: flex;
-  justify-content: space-between;
+  width: 100%;
   overflow: hidden;
 }
 .restaurant__details__starter__card__description {
@@ -404,19 +404,21 @@
 }
 .restaurant__details__starter__card__price {
   font-weight: 700;
-  margin-left: auto;
+  width: 10%;
   margin-right: 10px;
+  margin-left: auto;
+  transform: translateX(20px);
   transition: all 1s ease-in-out;
   display: flex;
-  justify-content: flex-end;
   align-items: flex-end;
+  justify-content: flex-end;
 }
 .restaurant__details__starter__card__price p {
   white-space: nowrap;
 }
 .restaurant__details__starter__card--check {
-  width: 0;
   display: flex;
+  transform: translateX(70px);
   background-color: #99E2D0;
   justify-content: center;
   align-items: center;
@@ -434,12 +436,14 @@
   cursor: pointer;
 }
 .restaurant__details__starter__card:hover > .restaurant__details__starter__card--check {
-  width: 20%;
+  padding-right: 19px;
+  padding-left: 19px;
+  transform: translateX(0);
   transition: all 800ms 150ms ease-in-out;
 }
 .restaurant__details__starter__card:hover > .restaurant__details__starter__card__price {
-  transform: translateX(0px);
-  transition: 800ms 150ms ease-in-out;
+  transform: translateX(0);
+  transition: transform 800ms 150ms ease-in-out;
 }
 .restaurant__details__order {
   margin-top: 30px;
