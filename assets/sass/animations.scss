@@ -1,10 +1,10 @@
 @keyframes shake {
   25% {
-    transform: translateY(4%);
+    transform: translateY(5%);
   }
 
   75% {
-    transform: translateY(4% * -1);
+    transform: translateY(-5%);
   }
 }
 
